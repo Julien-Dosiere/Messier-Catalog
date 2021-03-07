@@ -1,20 +1,18 @@
 // == Import npm
 import React, { useState } from 'react';
 
-import Login from 'src/components/Login';
-import Search from 'src/components/Search';
-import TrackResults from 'src/components/TrackResults';
+import Login from '../Login';
+import Search from '../Search';
+import TrackResults from '../TrackResults';
 
-import trackSearch from 'src/data/track_search';
+import trackSearch from '../../data/track_search';
 
 import 'semantic-ui-css/semantic.min.css';
 import './app.scss';
-
 // == Composant
 const App = () => {
-  const [search, setSearch] = useState('');
-  const [token, setToken] = useState('');
-
+  const [search, setSearch]: [string, any]= useState('');
+  const [token, setToken]: [string, any] = useState('');
   return (
     <div className="app">
       <Login
@@ -26,7 +24,7 @@ const App = () => {
         setSearchValue={setSearch}
         placeholder="Chercher une chanson"
       />
-      <TrackResults results={trackSearch} />
+      <TrackResults />
     </div>
   );
 };

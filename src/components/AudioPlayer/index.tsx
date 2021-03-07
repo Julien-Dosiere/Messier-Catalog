@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Icon, Button } from 'semantic-ui-react';
 
 // un hook custom pour gérer l'audio
-const useAudio = (url) => {
+const useAudio = (url: any) => {
   const [audio] = useState(new Audio(url));
   const [playing, setPlaying] = useState(false);
 
@@ -28,10 +28,13 @@ const useAudio = (url) => {
   return [playing, toggle];
 };
 
+// @ts-ignore
 const AudioPlayer = ({ url }) => {
   const [playing, toggle] = useAudio(url);
 
+
   return (
+      // @ts-ignore
     <Button onClick={toggle} icon labelPosition="left">
       <Icon name={playing ? 'pause' : 'play'} />
       {playing ? 'Pause' : 'Play'}

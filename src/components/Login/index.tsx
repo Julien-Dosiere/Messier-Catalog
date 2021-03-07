@@ -5,9 +5,8 @@ import { Input } from 'semantic-ui-react';
 
 import './login.scss';
 
-const Login = ({
-  accessToken, setAccessToken,
-}) => (
+// @ts-ignore
+const Login = ({ accessToken, setAccessToken,}) => (
   <Input
     className="login"
     icon="lock open"

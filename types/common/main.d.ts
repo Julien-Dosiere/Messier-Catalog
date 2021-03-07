@@ -1,13 +1,26 @@
 
 
 interface State {
-    results: Results
+    results: Results,
+    searchValue: string,
+    isLoading: boolean,
+    token: string
+
 }
 
 
 
+type GenericObject = { [key: string]: GenericObject };
+type GenericCallback = (...args: any[])=>any;
+
 interface Action {
-    type: string
+    type: string,
+    payload: any,
+    redirect: GenericCallback
+}
+
+interface Payload {
+    text?: string
 }
 
 interface Results {

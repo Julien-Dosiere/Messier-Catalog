@@ -1,13 +1,21 @@
-import { createStore, compose } from 'redux';
+import { createStore, compose, applyMiddleware } from 'redux';
 
 import reducer from './reducer';
+import apiMW from './middlewares/api';
 
 
-//@ts-ignore
+// @ts-ignore
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
-export default createStore(
-    reducer,
-    // activation des ReduxDevTools
-    composeEnhancers
+const enhancers = composeEnhancers(
+    applyMiddleware(
+        apiMW
+    )
 );
+
+const store = createStore(
+    reducer,
+    enhancers
+);
+
+export default store;

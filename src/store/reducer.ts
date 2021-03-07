@@ -1,7 +1,10 @@
 import trackSearch from '../data/track_search';
 
 const initialState: State = {
-    results: trackSearch
+    results: trackSearch,
+    searchValue: '',
+    isLoading: false,
+    token:'',
 };
 
 // Le taf d'un reducer, c'est de digérer une action,
@@ -11,6 +14,41 @@ const initialState: State = {
 // nouvel objet state.
 export default function(state = initialState, action: Action) {
     let newState = {...state};
+    if (action.type === 'SET_SEARCH_VALUE') {
+        newState = {
+            ...state,
+            searchValue: action.payload.text
+        }
+    }
+
+    if (action.type === 'SET_RESULT') {
+        newState = {
+            ...state,
+            results: action.payload
+        }
+    }
+
+    if (action.type === 'EMPTY_RESULT'){
+        newState = {
+            ...state,
+            results: {tracks:{items:[]}}
+        }
+    }
+
+    if (action.type === 'SET_TOKEN') {
+        newState = {
+            ...state,
+            token: action.payload.text
+        }
+    }
+
+    if (action.type === 'LOADING') {
+        newState = {
+            ...state,
+            isLoading: !state.isLoading
+        }
+    }
+
 
 
     return newState;

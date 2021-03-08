@@ -13,16 +13,16 @@ import AudioPlayer from '../AudioPlayer';
 const TrackResults = ({ results }: { results: TrackResults }) => {
     return (
         <Card.Group centered itemsPerRow={4}>
-
             {results.tracks.items.map((track: Track) => {
                     let albumImage: string | undefined = track.album?.images?.length ? track.album.images[0].url : ''
+                const audio = track.preview_url ? <AudioPlayer url={track.preview_url}/> : 'Preview unavailable'
                     return (
                         <Card
                             key={track.id}
                             image={albumImage}
                             header={track.name}
                             meta={track.artists[0].name}
-                            extra={<AudioPlayer url={track.preview_url}/>}
+                            extra={audio}
                         />
                     )
                 }

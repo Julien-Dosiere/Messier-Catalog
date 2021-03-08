@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Icon, Button } from 'semantic-ui-react';
 
 // un hook custom pour gérer l'audio
-const useAudio = (url: any) => {
+const useAudio = (url: string) => {
   const [audio] = useState(new Audio(url));
   const [playing, setPlaying] = useState(false);
 
@@ -28,8 +28,8 @@ const useAudio = (url: any) => {
   return [playing, toggle];
 };
 
-// @ts-ignore
-const AudioPlayer = ({ url }) => {
+
+const AudioPlayer = ({ url }: {url: string}) => {
   const [playing, toggle] = useAudio(url);
 
 
@@ -43,7 +43,7 @@ const AudioPlayer = ({ url }) => {
 };
 
 AudioPlayer.propTypes = {
-  url: PropTypes.string.isRequired,
+  url: PropTypes.string,
 };
 
 export default AudioPlayer;

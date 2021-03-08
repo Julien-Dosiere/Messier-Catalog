@@ -9,7 +9,7 @@ import trackSearch from '../../data/track_search';
 
 import 'semantic-ui-css/semantic.min.css';
 import './app.scss';
-import HashLoader from "react-spinners/HashLoader";
+import Spinner from "react-spinners/ScaleLoader";
 import {css} from "@emotion/core";
 import {connect} from "react-redux";
 
@@ -25,16 +25,16 @@ const App = ({isLoading}: { isLoading: boolean }) => {
     return (
         <div className="app">
 
-
-
             <Login/>
                 <Search/>
 
-                <HashLoader
+                <Spinner
                     css={override}
-                    size={20}
-                    color={"#00FF55"}
+                    color={"#00EE55"}
                     loading={isLoading}
+                    height={55}
+                    width={6}
+                    margin={4}
                 />
             <Route exact strict path={["/", "/track"]}>
                 <TrackResults/>

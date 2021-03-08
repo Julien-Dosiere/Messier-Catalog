@@ -4,10 +4,11 @@ import {Store} from "redux";
 export default (store: any) => (next: GenericCallback) => (action: Action) => {
 
     if (action.type === 'MAKE_SEARCH') {
+        store.dispatch({ type: 'EMPTY_RESULT'})
         store.dispatch({ type: 'LOADING'});
         const state = store.getState();
         const searchTerm = state.searchValue
-        const token = "Bearer "+"BQAi6VQ3xbtC0HcAAufh37obdruPM_Y8ra13L0erx-d_kx7OGBYM7moEzU01PFs0iXRuvVOOIrB5v65JyUL9tvioBOlIAHfPNYTUdP18d2fQD5wgOtrn4Pax0qVa4kQQexQZvhR2jzK4t3QvxJm7SF_ZGB_9CMjuBMc"
+        const token = "Bearer "+state.token
         const searchType = action.payload.searchType
         axios
             .get(`https://api.spotify.com/v1/search?q=${searchTerm}&type=${searchType}&limit=10&offset=0`, {

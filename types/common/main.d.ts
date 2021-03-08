@@ -5,7 +5,7 @@ interface State {
     artistResults: ArtistResults,
     searchValue: string,
     isLoading: boolean,
-    token: string
+    token: string,
 
 }
 

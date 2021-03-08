@@ -7,9 +7,10 @@ export default (store: any) => (next: GenericCallback) => (action: Action) => {
         store.dispatch({ type: 'LOADING'});
         const state = store.getState();
         const searchTerm = state.searchValue
-        const token = "Bearer "+state.token
+        const token = "Bearer "+"BQAi6VQ3xbtC0HcAAufh37obdruPM_Y8ra13L0erx-d_kx7OGBYM7moEzU01PFs0iXRuvVOOIrB5v65JyUL9tvioBOlIAHfPNYTUdP18d2fQD5wgOtrn4Pax0qVa4kQQexQZvhR2jzK4t3QvxJm7SF_ZGB_9CMjuBMc"
+        const searchType = action.payload.searchType
         axios
-            .get(`https://api.spotify.com/v1/search?q=${searchTerm}&type=track&limit=10&offset=0`, {
+            .get(`https://api.spotify.com/v1/search?q=${searchTerm}&type=${searchType}&limit=10&offset=0`, {
                 headers: {
                     'Accept': 'application/json',
                     'Content-Type': "application/json",
@@ -25,7 +26,14 @@ export default (store: any) => (next: GenericCallback) => (action: Action) => {
                 }
 
                 store.dispatch({ type: 'LOADING'});
-                store.dispatch({ type: 'SET_RESULT', payload: response.data});
+                switch (searchType){
+                    case "track":
+                        store.dispatch({ type: 'SET_TRACKS_RESULT', payload: response.data});
+                        break
+                    case "artist":
+                        store.dispatch({ type: 'SET_ARTISTS_RESULT', payload: response.data});
+                        break
+                }
 
             })
             .catch(error => {

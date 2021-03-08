@@ -1,7 +1,8 @@
 
 
 interface State {
-    results: Results,
+    trackResults: TrackResults,
+    artistResults: ArtistResults,
     searchValue: string,
     isLoading: boolean,
     token: string
@@ -24,7 +25,25 @@ interface Payload {
 }
 
 interface Results {
+    tracks?: Tracks
+}
+
+interface TrackResults {
     tracks: Tracks
+}
+
+interface ArtistResults {
+    artists: Artists
+}
+
+interface Artists {
+    items: Artist[]
+}
+
+interface Artist {
+    id: string;
+    name: string;
+    images:Image[]
 }
 
 interface Tracks {

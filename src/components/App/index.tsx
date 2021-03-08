@@ -4,12 +4,12 @@ import {Redirect, Route} from 'react-router-dom';
 import Login from '../Login';
 import Search from '../Search';
 import TrackResults from '../TrackResults';
-
+import ArtistResult from '../ArtistResults';
 import trackSearch from '../../data/track_search';
 
 import 'semantic-ui-css/semantic.min.css';
 import './app.scss';
-import LoaderIcon from "react-spinners/GridLoader";
+import HashLoader from "react-spinners/HashLoader";
 import {css} from "@emotion/core";
 import {connect} from "react-redux";
 
@@ -30,17 +30,17 @@ const App = ({isLoading}: { isLoading: boolean }) => {
             <Login/>
                 <Search/>
 
-                <LoaderIcon
+                <HashLoader
                     css={override}
                     size={20}
-                    color={"#00FF00"}
+                    color={"#00FF55"}
                     loading={isLoading}
                 />
             <Route exact strict path={["/", "/track"]}>
                 <TrackResults/>
             </Route>
             <Route path={["/artist"]}>
-                <button>test</button>
+                <ArtistResult />
             </Route>
         </div>
     );

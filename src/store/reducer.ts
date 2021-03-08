@@ -1,7 +1,10 @@
 import trackSearch from '../data/track_search';
+import artistSearch from '../data/artist_search';
+
 
 const initialState: State = {
-    results: trackSearch,
+    trackResults:{tracks:{items:[]}},
+    artistResults:{artists:{items:[]}},
     searchValue: '',
     isLoading: false,
     token:'',
@@ -21,17 +24,25 @@ export default function(state = initialState, action: Action) {
         }
     }
 
-    if (action.type === 'SET_RESULT') {
+    if (action.type === 'SET_TRACKS_RESULT') {
         newState = {
             ...state,
-            results: action.payload
+            trackResults: action.payload
+        }
+    }
+
+    if (action.type === 'SET_ARTISTS_RESULT') {
+        newState = {
+            ...state,
+            artistResults: action.payload
         }
     }
 
     if (action.type === 'EMPTY_RESULT'){
         newState = {
             ...state,
-            results: {tracks:{items:[]}}
+            trackResults: {tracks:{items:[]}},
+            artistResults: {artists:{items:[]}}
         }
     }
 

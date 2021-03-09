@@ -1,21 +1,17 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import { Card } from 'semantic-ui-react';
+import {connect} from 'react-redux';
 
-import { connect } from 'react-redux';
+import {Card} from 'semantic-ui-react';
 
 import AudioPlayer from '../AudioPlayer';
 
 
-
-
-
-const TrackResults = ({ results }: { results: TrackResults }) => {
+const TrackResults = ({results}: { results: TrackResults }) => {
     return (
         <Card.Group centered itemsPerRow={4}>
             {results.tracks.items.map((track: Track) => {
-                    let albumImage: string | undefined = track.album?.images?.length ? track.album.images[0].url : ''
-                const audio = track.preview_url ? <AudioPlayer url={track.preview_url}/> : 'Preview unavailable'
+                    let albumImage: string | undefined = track.album?.images?.length ? track.album.images[0].url : undefined
+                    const audio = track.preview_url ? <AudioPlayer url={track.preview_url}/> : 'Preview unavailable'
                     return (
                         <Card
                             key={track.id}
@@ -28,18 +24,18 @@ const TrackResults = ({ results }: { results: TrackResults }) => {
                 }
             )}
         </Card.Group>
-
-
     );
 }
 
 const mapStateToProps = (state: State) => {
-
     return {
         results: state.trackResults
-}; };
+    };
+};
 
-const mapDispatchToProps = () => { return {}; };
+const mapDispatchToProps = () => {
+    return {};
+};
 
 
 export default connect(mapStateToProps, mapDispatchToProps)(TrackResults);

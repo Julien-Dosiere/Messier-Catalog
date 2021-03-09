@@ -11,8 +11,7 @@ const ArtistSearch = (
     {
         searchValue,
         setSearchValue,
-        makeSearch,
-        //makeSearch
+        makeSearch
     }: {
         searchValue: string,
         setSearchValue: GenericCallback,
@@ -24,7 +23,6 @@ const ArtistSearch = (
             className="search__form"
             onSubmit={makeSearch}
         >
-            {/* Champ controlé classique, mais avec un <Input> de semantic ui */}
             <Input
                 fluid
                 icon="search"
@@ -38,7 +36,6 @@ const ArtistSearch = (
 
 
 const mapStateToProps = (state: State) => {
-
     return {
         searchValue: state.searchValue,
     };
@@ -55,17 +52,10 @@ const mapDispatchToProps = (dispatch: (...args: any[]) => any) => {
             });
         },
         makeSearch: (event: GenericObject) => {
-
-                dispatch({
-                    type: 'MAKE_SEARCH',
-                    payload: {
-                        searchType: "artist"
-                    }
-                });
-
+            dispatch({
+                type: 'ARTIST_SEARCH',
+            });
         },
-
-
     };
 };
 

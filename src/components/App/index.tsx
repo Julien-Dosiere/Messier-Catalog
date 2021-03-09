@@ -1,18 +1,24 @@
-// == Import npm
+// == Import React modules
 import React, {useState} from 'react';
 import {Redirect, Route} from 'react-router-dom';
-import Login from '../Login';
-import Search from '../Search';
-import TrackResults from '../TrackResults';
-import ArtistResult from '../ArtistResults';
-import trackSearch from '../../data/track_search';
-
+import {connect} from "react-redux";
+// extra packages
 import 'semantic-ui-css/semantic.min.css';
 import './app.scss';
 import Spinner from "react-spinners/ScaleLoader";
 import {css} from "@emotion/core";
-import {connect} from "react-redux";
 
+
+// == Components
+import Login from '../Login';
+import Search from '../Search';
+import TrackResults from '../TrackResults';
+import ArtistResult from '../ArtistResults';
+
+
+
+
+// override necessary for react-spinners
 const override = css`
   display: block;
   margin: 15px auto;
@@ -20,14 +26,12 @@ const override = css`
 `;
 
 
-// == Composant
+// == Component
 const App = ({isLoading}: { isLoading: boolean }) => {
     return (
         <div className="app">
-
             <Login/>
                 <Search/>
-
                 <Spinner
                     css={override}
                     color={"#00EE55"}
@@ -36,9 +40,11 @@ const App = ({isLoading}: { isLoading: boolean }) => {
                     width={6}
                     margin={4}
                 />
+
             <Route exact strict path={["/", "/track"]}>
                 <TrackResults/>
             </Route>
+
             <Route path={["/artist"]}>
                 <ArtistResult />
             </Route>
@@ -48,7 +54,6 @@ const App = ({isLoading}: { isLoading: boolean }) => {
 
 
 const mapStateToProps = (state: State) => {
-
     return {
         isLoading: state.isLoading
     };

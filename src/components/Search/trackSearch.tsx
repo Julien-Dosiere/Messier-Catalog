@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { useLocation } from 'react-router-dom'
+import {useLocation} from 'react-router-dom'
 import {Input, Form, Image, Button, Segment} from 'semantic-ui-react';
 
 import logoSpotify from '../../assets/logo_spotify.png';
@@ -12,40 +12,38 @@ const TrackSearch = (
         searchValue,
         setSearchValue,
         makeSearch,
-        //makeSearch
     }: {
         searchValue: string,
         setSearchValue: GenericCallback,
         makeSearch: GenericCallback
     }
 ) => (
-  <>
+    <>
 
         <Form
             className="search__form"
-            onSubmit={ makeSearch }
+            onSubmit={makeSearch}
         >
-            {/* Champ controlé classique, mais avec un <Input> de semantic ui */}
             <Input
                 fluid
                 icon="search"
-                placeholder= "search for tracks"
+                placeholder="search for tracks"
                 value={searchValue}
-                onChange={ setSearchValue }
+                onChange={setSearchValue}
             />
         </Form>
 
-</>
+    </>
 );
 
 
 const mapStateToProps = (state: State) => {
-
     return {
         searchValue: state.searchValue,
-    }; };
+    };
+};
 
-const mapDispatchToProps = (dispatch: (...args: any[])=>any) => {
+const mapDispatchToProps = (dispatch: (...args: any[]) => any) => {
     return {
         setSearchValue: (event: GenericObject) => {
             dispatch({
@@ -56,15 +54,10 @@ const mapDispatchToProps = (dispatch: (...args: any[])=>any) => {
             });
         },
         makeSearch: (event: GenericObject) => {
-                dispatch({
-                    type: 'MAKE_SEARCH',
-                    payload: {
-                        searchType: "track"
-                    }
-                });
+            dispatch({
+                type: 'TRACK_SEARCH',
+            });
         },
-
-
     };
 };
 

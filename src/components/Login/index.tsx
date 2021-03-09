@@ -1,15 +1,10 @@
 import React from 'react';
-
 import { Input } from 'semantic-ui-react';
-
-import './login.scss';
 import {connect} from "react-redux";
 
-// @ts-ignore
-const Login = (
-    { accessToken, setToken}:
-        { accessToken: string, setToken: GenericCallback}
-    ) => (
+import './login.scss';
+
+const Login = ( { accessToken, setToken}: { accessToken: string, setToken: GenericCallback}) => (
   <Input
     className="login"
     icon="lock open"
@@ -21,7 +16,6 @@ const Login = (
 
 
 const mapStateToProps = (state: State) => {
-
     return {
         accessToken: state.token,
     }; };
@@ -36,9 +30,6 @@ const mapDispatchToProps = (dispatch: GenericCallback) => {
                 }
             });
         },
-
-
-
     };
 };
 

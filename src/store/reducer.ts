@@ -1,7 +1,3 @@
-import trackSearch from '../data/track_search';
-import artistSearch from '../data/artist_search';
-
-
 const initialState: State = {
     trackResults:{tracks:{items:[]}},
     artistResults:{artists:{items:[]}},
@@ -10,11 +6,7 @@ const initialState: State = {
     token:'',
 };
 
-// Le taf d'un reducer, c'est de digérer une action,
-// et si elle est considérée valide, de modifier le
-// state.
-// Dans tous les cas, le reducer doit retourner un
-// nouvel objet state.
+
 export default function(state = initialState, action: Action) {
     let newState = {...state};
     if (action.type === 'SET_SEARCH_VALUE') {
@@ -53,10 +45,17 @@ export default function(state = initialState, action: Action) {
         }
     }
 
-    if (action.type === 'LOADING') {
+    if (action.type === 'IS_LOADING') {
         newState = {
             ...state,
-            isLoading: !state.isLoading
+            isLoading: true
+        }
+    }
+
+    if (action.type === 'IS_NOT_LOADING') {
+        newState = {
+            ...state,
+            isLoading: false
         }
     }
 

@@ -2,10 +2,10 @@ import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { Icon, Button } from 'semantic-ui-react';
 
-// un hook custom pour gérer l'audio
+// custom for managing audio player
 const useAudio = (url: string) => {
   const [audio] = useState(new Audio(url));
-  const [playing, setPlaying] = useState(false);
+  const [playing, setPlaying]: [boolean, GenericCallback] = useState(false);
 
   const toggle = () => setPlaying(!playing);
 
@@ -35,7 +35,7 @@ const AudioPlayer = ({ url }: {url: string}) => {
 
   return (
       // @ts-ignore
-    <Button onClick={toggle} icon labelPosition="left">
+      <Button onClick={toggle} icon labelPosition="left">
       <Icon name={playing ? 'pause' : 'play'} />
       {playing ? 'Pause' : 'Play'}
     </Button>

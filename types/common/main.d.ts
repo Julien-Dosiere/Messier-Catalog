@@ -26,6 +26,8 @@ interface Payload {
 
 interface Results {
     tracks?: Tracks
+    artist?: Artist
+
 }
 
 interface TrackResults {

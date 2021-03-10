@@ -11,8 +11,9 @@ interface State {
 
 
 
-type GenericObject = { [key: string]: GenericObject };
-type GenericCallback = (...args: any[])=>any;
+interface GenericObject  { [key: string]: GenericObject }
+type GenericCallback = (...args: any[])=>any
+
 
 interface Action {
     type: string,

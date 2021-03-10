@@ -1,5 +1,5 @@
 import React from 'react';
-import {Route} from 'react-router-dom'
+import {Route, Link} from 'react-router-dom'
 
 import TrackSearch from "./trackSearch";
 import ArtistSearch from "./artistSearch"
@@ -12,16 +12,16 @@ const SearchBar = () => (
     <>
         <Image centered size="medium" src={logoSpotify}/>
         <Segment>
-            <a href="/track">
+            <Link to="/track">
                 <Button color={"green"}>
                     Track Search
                 </Button>
-            </a>
-            <a href="/artist">
+            </Link>
+            <Link to="/artist">
                 <Button color={"green"}>
                     Artist Search
                 </Button>
-            </a>
+            </Link>
             <Route exact strict path={["/", "/track"]}>
                 <TrackSearch/>
             </Route>

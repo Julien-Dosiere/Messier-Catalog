@@ -45,7 +45,7 @@ const mapStateToProps = (state: State) => {
 
 const mapDispatchToProps = (dispatch: (...args: any[]) => any) => {
     return {
-        setSearchValue: (event: GenericObject) => {
+        setSearchValue: (event: React.ChangeEvent<HTMLInputElement>) => {
             dispatch({
                 type: 'SET_SEARCH_VALUE',
                 payload: {
@@ -53,7 +53,8 @@ const mapDispatchToProps = (dispatch: (...args: any[]) => any) => {
                 }
             });
         },
-        makeSearch: (event: GenericObject) => {
+        makeSearch: (event: React.FormEvent<HTMLInputElement>) => {
+            event.preventDefault();
             dispatch({
                 type: 'TRACK_SEARCH',
             });

@@ -34,24 +34,23 @@ const ArtistSearch = (
     </>
 );
 
-
 const mapStateToProps = (state: State) => {
     return {
         searchValue: state.searchValue,
     };
 };
-
 const mapDispatchToProps = (dispatch: (...args: any[]) => any) => {
     return {
-        setSearchValue: (event: GenericObject) => {
+        setSearchValue: (event: React.ChangeEvent<HTMLInputElement>) => {
             dispatch({
                 type: 'SET_SEARCH_VALUE',
                 payload: {
-                    text: event.target.value,
+                    text: event?.target?.value,
                 }
             });
         },
-        makeSearch: (event: GenericObject) => {
+        makeSearch: (event: React.FormEvent<HTMLInputElement>) => {
+            event.preventDefault();
             dispatch({
                 type: 'ARTIST_SEARCH',
             });

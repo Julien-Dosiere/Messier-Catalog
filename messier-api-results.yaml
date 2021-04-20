@@ -1,0 +1,328 @@
+nhits: 110
+parameters:
+  dataset: catalogue-de-messier
+  timezone: UTC
+  rows: 10
+  start: 0
+  format: json
+records:
+  - datasetid: catalogue-de-messier
+    recordid: 7e4c1cf3b2a46e7fcf200836458e22dea835a247
+    fields:
+      objet: Galaxy / Galaxie
+      const: Com
+      mag: 10
+      decouvreur: Messier
+      distance: 37000000
+      image: 'http://www.lasam.ca/messier/M091.JPG'
+      ngc: NGC 4548
+      latin_name_nom_latin: Coma Berenices
+      messier: M91
+      image_url:
+        mimetype: image/jpeg
+        format: JPEG
+        color_summary:
+          - 'rgba(241, 241, 241, 1.00)'
+          - 'rgba(252, 251, 251, 1.00)'
+          - 'rgba(249, 248, 248, 1.00)'
+        filename: M091.JPG.jpe
+        width: 816
+        id: 284c5bc7c93f0088d9a250d0e946c902
+        height: 1054
+        thumbnail: true
+      saison: Spring / Printemps
+      english_name_nom_en_anglais: Hair of Berenice
+      french_name_nom_francais: Chevelure de Bérénice
+      annee: '1781'
+      dec: '+14:29:46.8'
+      dimension: '5,4'' x 4,4'''
+      ra: '12:35:26.45'
+    record_timestamp: '2019-03-05T09:44:29.021000+00:00'
+  - datasetid: catalogue-de-messier
+    recordid: 6fb430b817b86b37240f8f318192f462c6eeb56b
+    fields:
+      objet: Globular Cluster / Amas Globulaire
+      const: Sgr
+      mag: 8
+      decouvreur: Méchain
+      distance: 78500
+      image: 'http://www.lasam.ca/messier/M075.JPG'
+      ngc: NGC 6864
+      latin_name_nom_latin: Sagittarius
+      messier: M75
+      image_url:
+        mimetype: image/jpeg
+        format: JPEG
+        color_summary:
+          - 'rgba(236, 235, 235, 1.00)'
+          - 'rgba(251, 250, 250, 1.00)'
+          - 'rgba(251, 250, 250, 1.00)'
+        filename: M075.JPG.jpe
+        width: 816
+        id: 00f582867eec79eab3bc4d51021d8178
+        height: 1054
+        thumbnail: true
+      saison: Summer / Été
+      english_name_nom_en_anglais: Archer
+      french_name_nom_francais: Sagittaire
+      annee: '1780'
+      dec: '-21:55:20.0'
+      dimension: '4,6'''
+      ra: '20:06:04.84'
+    record_timestamp: '2019-03-05T09:44:29.021000+00:00'
+  - datasetid: catalogue-de-messier
+    recordid: 97dca12c94a942e4a705d385b3789f7b413cbcde
+    fields:
+      objet: Galaxy / Galaxie
+      const: Leo
+      mag: 9
+      decouvreur: Méchain
+      distance: 20300000
+      image: 'http://www.lasam.ca/messier/M095.JPG'
+      ngc: NGC 3351
+      latin_name_nom_latin: Leo
+      messier: M95
+      image_url:
+        mimetype: image/jpeg
+        format: JPEG
+        color_summary:
+          - 'rgba(241, 240, 240, 1.00)'
+          - 'rgba(251, 251, 251, 1.00)'
+          - 'rgba(250, 250, 250, 1.00)'
+        filename: M095.JPG.jpe
+        width: 816
+        id: d78c022080defa2df511b4a74951c911
+        height: 1054
+        thumbnail: true
+      saison: Spring / Printemps
+      english_name_nom_en_anglais: Lion
+      french_name_nom_francais: Lion
+      annee: '1781'
+      dec: '+11:42:13.7'
+      dimension: '7,4'' x 5,1'''
+      ra: '10:43:57.70'
+    record_timestamp: '2019-03-05T09:44:29.021000+00:00'
+  - datasetid: catalogue-de-messier
+    recordid: fb83e2388fa0677bdd7a888bbab2bf6c60339aba
+    fields:
+      objet: Open Cluster / Amas Ouvert
+      const: CMa
+      mag: 4
+      decouvreur: Hodierna
+      distance: 1600
+      image: 'http://www.lasam.ca/messier/M041.JPG'
+      ngc: NGC 2287
+      latin_name_nom_latin: Canis Major
+      messier: M41
+      image_url:
+        mimetype: image/jpeg
+        format: JPEG
+        color_summary:
+          - 'rgba(217, 217, 217, 1.00)'
+          - 'rgba(241, 240, 240, 1.00)'
+          - 'rgba(249, 248, 248, 1.00)'
+        filename: M041.JPG.jpe
+        width: 816
+        id: 29f4c224d82abed7818f5b0d8d2c88f2
+        height: 1054
+        thumbnail: true
+      saison: Winter / Hiver
+      english_name_nom_en_anglais: Great Dog
+      french_name_nom_francais: Grand Chien
+      annee: '1654'
+      dec: '-20:45:15.2'
+      dimension: '30,0'''
+      ra: '06:45:59.94'
+    record_timestamp: '2019-03-05T09:44:29.021000+00:00'
+  - datasetid: catalogue-de-messier
+    recordid: 6c60248c08580e6b00fbd15fc64b678bcb554518
+    fields:
+      objet: Open Cluster / Amas Ouvert
+      const: Pup
+      mag: 6
+      decouvreur: Messier
+      distance: 3200
+      image: 'http://www.lasam.ca/messier/M046.JPG'
+      ngc: NGC 2437
+      latin_name_nom_latin: Puppis
+      messier: M46
+      image_url:
+        mimetype: image/jpeg
+        format: JPEG
+        color_summary:
+          - 'rgba(216, 216, 216, 1.00)'
+          - 'rgba(215, 214, 214, 1.00)'
+          - 'rgba(210, 210, 210, 1.00)'
+        filename: M046.JPG.jpe
+        width: 816
+        id: b01e8f5ad9db9482252f14ccd3313cd9
+        height: 1054
+        thumbnail: true
+      saison: Winter / Hiver
+      english_name_nom_en_anglais: 'Stern,Poop deck'
+      french_name_nom_francais: Poupe
+      annee: '1771'
+      dec: '-14:48:36.0'
+      dimension: '24,0'''
+      ra: '07:41:46.82'
+    record_timestamp: '2019-03-05T09:44:29.021000+00:00'
+  - datasetid: catalogue-de-messier
+    recordid: f7e5591290b9e9b7cf126919a8d2b12faabbcee6
+    fields:
+      objet: Galaxy / Galaxie
+      const: Vir
+      mag: 9
+      decouvreur: Koehler
+      distance: 41000000
+      image: 'http://www.lasam.ca/messier/M059.JPG'
+      ngc: NGC 4621
+      latin_name_nom_latin: Virgo
+      messier: M59
+      image_url:
+        mimetype: image/jpeg
+        format: JPEG
+        color_summary:
+          - 'rgba(241, 240, 240, 1.00)'
+          - 'rgba(252, 251, 251, 1.00)'
+          - 'rgba(249, 248, 249, 1.00)'
+        filename: M059.JPG.jpe
+        width: 816
+        id: b24a84de6da3360d826cf5c3ab0261d1
+        height: 1054
+        thumbnail: true
+      saison: Spring / Printemps
+      english_name_nom_en_anglais: Virgin
+      french_name_nom_francais: Vierge
+      annee: '1779'
+      dec: '+11:38:49.3'
+      dimension: '5,1'' x 3,4'''
+      ra: '12:42:02.24'
+    record_timestamp: '2019-03-05T09:44:29.021000+00:00'
+  - datasetid: catalogue-de-messier
+    recordid: b93b06165946877ab2d01c5fbf7b15f4c9765eb0
+    fields:
+      objet: Galaxy / Galaxie
+      const: Vir
+      mag: 8
+      decouvreur: Messier
+      distance: 41000000
+      image: 'http://www.lasam.ca/messier/M049.JPG'
+      ngc: NGC 4472
+      latin_name_nom_latin: Virgo
+      messier: M49
+      image_url:
+        mimetype: image/jpeg
+        format: JPEG
+        color_summary:
+          - 'rgba(241, 240, 240, 1.00)'
+          - 'rgba(252, 251, 251, 1.00)'
+          - 'rgba(249, 248, 248, 1.00)'
+        filename: M049.JPG.jpe
+        width: 816
+        id: 25046a4043828d3b133a4a98e981ae82
+        height: 1054
+        thumbnail: true
+      saison: Spring / Printemps
+      english_name_nom_en_anglais: Virgin
+      french_name_nom_francais: Vierge
+      annee: '1771'
+      dec: '+08:00:01.7'
+      dimension: '8,9'' x 7,4'''
+      ra: '12:29:46.76'
+    record_timestamp: '2019-03-05T09:44:29.021000+00:00'
+  - datasetid: catalogue-de-messier
+    recordid: 0a4d6e998446e99fd6e6e90401a8e2ce825a064b
+    fields:
+      objet: Galaxy / Galaxie
+      const: Com
+      mag: 9
+      decouvreur: Méchain
+      distance: 41000000
+      image: 'http://www.lasam.ca/messier/M099.JPG'
+      ngc: NGC 4254
+      latin_name_nom_latin: Coma Berenices
+      messier: M99
+      image_url:
+        mimetype: image/jpeg
+        format: JPEG
+        color_summary:
+          - 'rgba(242, 241, 241, 1.00)'
+          - 'rgba(252, 251, 251, 1.00)'
+          - 'rgba(248, 248, 248, 1.00)'
+        filename: M099.JPG.jpe
+        width: 816
+        id: 76a67bc41ee3e41b25567e06b20bab39
+        height: 1054
+        thumbnail: true
+      saison: Spring / Printemps
+      english_name_nom_en_anglais: Hair of Berenice
+      french_name_nom_francais: Chevelure de Bérénice
+      annee: '1781'
+      dec: '+14:24:59.4'
+      dimension: '5,4'' x 4,8'''
+      ra: '12:18:49.60'
+    record_timestamp: '2019-03-05T09:44:29.021000+00:00'
+  - datasetid: catalogue-de-messier
+    recordid: 541f12b0672cd4f6a9887cccecdcbc3aa381fb34
+    fields:
+      objet: Emission Nebula / Nébuleuse à émission
+      const: Sgr
+      mag: 5
+      decouvreur: Flamsteed
+      distance: 4850
+      image: 'http://www.lasam.ca/messier/M008.JPG'
+      ngc: NGC 6523
+      latin_name_nom_latin: Sagittarius
+      messier: M8
+      image_url:
+        mimetype: image/jpeg
+        format: JPEG
+        color_summary:
+          - 'rgba(206, 204, 204, 1.00)'
+          - 'rgba(186, 185, 186, 1.00)'
+          - 'rgba(186, 185, 185, 1.00)'
+        filename: M008.JPG.jpe
+        width: 816
+        id: 0a09915c6203f288d82ddb1236a986a1
+        height: 1054
+        thumbnail: true
+      saison: Summer / Été
+      english_name_nom_en_anglais: Archer
+      french_name_nom_francais: Sagittaire
+      annee: '1680'
+      dec: '-24:22:48.6'
+      dimension: '90,0'' x 40,0'''
+      ra: '18:03:41.27'
+    record_timestamp: '2019-03-05T09:44:29.021000+00:00'
+  - datasetid: catalogue-de-messier
+    recordid: 5c20f3a7ed2c2ccdf8610308eedd414e782aded8
+    fields:
+      objet: Open Cluster / Amas Ouvert
+      const: Sct
+      mag: 5
+      decouvreur: Kirch
+      distance: 5600
+      image: 'http://www.lasam.ca/messier/M011.JPG'
+      ngc: NGC 6705
+      latin_name_nom_latin: Scutum
+      messier: M11
+      image_url:
+        mimetype: image/jpeg
+        format: JPEG
+        color_summary:
+          - 'rgba(202, 202, 202, 1.00)'
+          - 'rgba(215, 214, 215, 1.00)'
+          - 'rgba(199, 198, 198, 1.00)'
+        filename: M011.JPG.jpe
+        width: 816
+        id: 4bc62585d114ad1c0fc3075fcf93c6e5
+        height: 1054
+        thumbnail: true
+      saison: Summer / Été
+      english_name_nom_en_anglais: Shield
+      french_name_nom_francais: L’Écu de Sobieski
+      annee: '1681'
+      dec: '-06:16:12.1'
+      dimension: '14,0'''
+      ra: '18:51:05.99'
+    record_timestamp: '2019-03-05T09:44:29.021000+00:00'

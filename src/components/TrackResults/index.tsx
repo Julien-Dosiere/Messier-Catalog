@@ -6,7 +6,7 @@ import {Card} from 'semantic-ui-react';
 import AudioPlayer from '../AudioPlayer';
 
 
-const TrackResults = ({results}: { results: TrackResults }) => {
+const TrackResults = ({results}: { results: any }) => {
     return (
         <Card.Group centered itemsPerRow={4}>
             {results.tracks.items.map((track: Track) => {

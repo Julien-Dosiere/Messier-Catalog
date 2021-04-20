@@ -1,47 +1,66 @@
+// CP3: Code excerpt - Middleware dealing with data search
 import axios from 'axios';
-
+import json from './messier-api-results.json';
 export default (store: any) => (next: GenericCallback) => async (action: Action) => {
+    // Retrieving datas stored in the state
     const state = store.getState();
-    // Fonction de connexion à l'API et retrait des donnés
+    // Defining function dealing with retrieval of datas from API
     const apiSearch = async (searchType: string) => {
-        store.dispatch({type: 'EMPTY_RESULT'})
+        // Clearing out results list
+        store.dispatch({type: 'EMPTY_RESULT'});
+        // Displaying loading spinner
         store.dispatch({type: 'IS_LOADING'});
-        const searchTerm: string = state.searchValue
-        const token: string = "Bearer " + state.token
+        // Retrieving search term
+        const searchTerm: string = state.searchValue;
+        // Retrieving API token
+        const token: string = "Bearer " + state.token;
         try {
-            const response: any = await axios
-                .get(`https://api.spotify.com/v1/search?q=${searchTerm}&type=${searchType}&limit=10&offset=0`, {
-                    headers: {
-                        'Accept': 'application/json',
-                        'Content-Type': "application/json",
-                        "Authorization": token
-                    }
-                })
+            // Connecting to API using token and search term defined above
+            // const response: any = await axios
+            //     .get(`https://api.spotify.com/v1/search?q=${searchTerm}&type=${searchType}&limit=10&offset=0`, {
+            //         headers: {
+            //             'Accept': 'application/json',
+            //             'Content-Type': "application/json",
+            //             "Authorization": token
+            //         }
+            //     })
+            // Hiding loading spinner
             store.dispatch({type: 'IS_NOT_LOADING'});
-            const data: Results = response.data
-            return data
+            // Return datas obtained from API
+
+
+            const data: Results = json;
+
+            console.log(data);
+            return data;
+
+        // API error handling
         } catch (error) {
+            // Hiding loading spinner
             store.dispatch({type: 'IS_NOT_LOADING'});
+            // Logging error
             console.log(error)
             return
         }
     }
-    // Interceptionne l'action envoyé par le composant, exécute la fonction de
-    // recherche et sock les résultats dans le store Redux
+    // Execute track search
     if (action.type === 'TRACK_SEARCH') {
+        // Using above function to retrieve data from API
         const data: Results | undefined = await apiSearch("track")
+        // dispatching storing retrieved datas action
         if (data) {
             store.dispatch({type: 'SET_TRACKS_RESULT', payload: data});
         }
     }
-
+    // Execute artist search
     if (action.type === 'ARTIST_SEARCH') {
         const data: Results | undefined = await apiSearch("artist")
+        // dispatching storing retrieved datas action
         if (data) {
             store.dispatch({type: 'SET_ARTISTS_RESULT', payload: data});
         }
     }
-
+    // proceeding to reducers
     next(action);
 }
 

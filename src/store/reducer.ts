@@ -7,7 +7,8 @@ const initialState: State = {
     isLoading: false,
     token:'',
     focusObject: 0,
-    detailMode: false
+    detailMode: false,
+    noResult: false
 };
 
 
@@ -28,10 +29,23 @@ export default function(state = initialState, action: Action) {
     }
 
     if (action.type === 'DETAIL_MODE_OFF') {
-        console.log('DETAIL_MODE_OFF')
         newState = {
             ...state,
             detailMode: false
+        }
+    }
+
+    if (action.type === 'NO_RESULT_ON') {
+        newState = {
+            ...state,
+            noResult: true
+        }
+    }
+
+    if (action.type === 'NO_RESULT_OFF') {
+        newState = {
+            ...state,
+            noResult: false
         }
     }
 

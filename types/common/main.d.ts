@@ -8,7 +8,8 @@ interface State {
     isLoading: boolean,
     token: string,
     focusObject: number,
-    detailMode: boolean
+    detailMode: boolean,
+    noResult: boolean
 }
 
 
@@ -30,7 +31,7 @@ interface Payload {
 }
 
 interface Results {
-
+    records: Result[]
 
 }
 

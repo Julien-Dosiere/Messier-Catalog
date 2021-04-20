@@ -10,6 +10,8 @@ export default (store: any) => (next: GenericCallback) => async (action: Action)
         store.dispatch({type: 'EMPTY_RESULT'});
         // Displaying loading spinner
         store.dispatch({type: 'IS_LOADING'});
+        // Clearing out no result message
+        store.dispatch({type: 'NO_RESULT_OFF'});
         // Retrieving search term
         const searchTerm: string = state.searchValue;
         // Retrieving API token
@@ -33,7 +35,10 @@ export default (store: any) => (next: GenericCallback) => async (action: Action)
 
             const data: Results = response.data;
 
-            console.log(data);
+            if (data.records.length === 0)
+                store.dispatch({type: 'NO_RESULT_ON'});
+
+
             return data;
 
         // API error handling

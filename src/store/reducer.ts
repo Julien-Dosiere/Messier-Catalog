@@ -1,6 +1,8 @@
+// @ts-ignore
 const initialState: State = {
     trackResults:{tracks:{items:[]}},
     artistResults:{artists:{items:[]}},
+    results:{records:[]},
     searchValue: '',
     isLoading: false,
     token:'',
@@ -16,6 +18,12 @@ export default function(state = initialState, action: Action) {
         }
     }
 
+    if (action.type === 'SET_RESULTS') {
+        newState = {
+            ...state,
+            results: action.payload
+        }
+    }
     if (action.type === 'SET_TRACKS_RESULT') {
         newState = {
             ...state,

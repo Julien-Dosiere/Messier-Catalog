@@ -49,7 +49,7 @@ export default (store: any) => (next: GenericCallback) => async (action: Action)
         const data: Results | undefined = await apiSearch("track")
         // dispatching storing retrieved datas action
         if (data) {
-            store.dispatch({type: 'SET_TRACKS_RESULT', payload: data});
+            store.dispatch({type: 'SET_RESULTS', payload: data});
         }
     }
     // Execute artist search

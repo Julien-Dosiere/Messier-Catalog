@@ -7,11 +7,11 @@ import logoSpotify from '../../assets/logo_spotify.png';
 import './search.scss';
 import {connect} from "react-redux";
 
-const ArtistSearch = (
+const Search = (
     {
         searchValue,
         setSearchValue,
-        makeSearch
+        makeSearch,
     }: {
         searchValue: string,
         setSearchValue: GenericCallback,
@@ -19,44 +19,49 @@ const ArtistSearch = (
     }
 ) => (
     <>
+
         <Form
             className="search__form"
             onSubmit={makeSearch}
         >
+            <h3>Search in the Messier Catalog:</h3>
             <Input
                 fluid
                 icon="search"
-                placeholder="search for artist"
+                placeholder="search for Messier objects"
                 value={searchValue}
                 onChange={setSearchValue}
             />
         </Form>
+
     </>
 );
+
 
 const mapStateToProps = (state: State) => {
     return {
         searchValue: state.searchValue,
     };
 };
+
 const mapDispatchToProps = (dispatch: (...args: any[]) => any) => {
     return {
         setSearchValue: (event: React.ChangeEvent<HTMLInputElement>) => {
             dispatch({
                 type: 'SET_SEARCH_VALUE',
                 payload: {
-                    text: event?.target?.value,
+                    text: event.target.value,
                 }
             });
         },
         makeSearch: (event: React.FormEvent<HTMLInputElement>) => {
             event.preventDefault();
             dispatch({
-                type: 'ARTIST_SEARCH',
+                type: 'TRACK_SEARCH',
             });
         },
     };
 };
 
 
-export default connect(mapStateToProps, mapDispatchToProps)(ArtistSearch);
+export default connect(mapStateToProps, mapDispatchToProps)(Search);

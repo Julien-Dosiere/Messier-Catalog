@@ -10,10 +10,8 @@ import {css} from "@emotion/core";
 
 
 // == Components
-import Login from '../Login';
 import Search from '../Search';
-import TrackResults from '../TrackResults';
-import ArtistResult from '../ArtistResults';
+import Results from '../Results';
 
 
 
@@ -30,7 +28,6 @@ const override = css`
 const App = ({isLoading}: { isLoading: boolean }) => {
     return (
         <div className="app">
-            <Login/>
                 <Search/>
                 <Spinner
                     css={override}
@@ -42,12 +39,9 @@ const App = ({isLoading}: { isLoading: boolean }) => {
                 />
 
             <Route exact strict path={["/", "/track"]}>
-                <TrackResults/>
+                <Results/>
             </Route>
 
-            <Route path={["/artist"]}>
-                <ArtistResult />
-            </Route>
         </div>
     );
 };

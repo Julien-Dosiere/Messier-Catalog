@@ -9,16 +9,17 @@ import AudioPlayer from '../AudioPlayer';
 const TrackResults = ({results}: { results: any }) => {
     return (
         <Card.Group centered itemsPerRow={4}>
-            {results.tracks.items.map((track: Track) => {
-                    let albumImage: string | undefined = track.album?.images?.length ? track.album.images[0].url : undefined
-                    const audio = track.preview_url ? <AudioPlayer url={track.preview_url}/> : 'Preview unavailable'
-                    return (
+            {results.records.map((result: Result) => {
+                    console.log(result)
+                    let image: any = result.fields?.image? result.fields.image : null
+                return (
                         <Card
-                            key={track.id}
-                            image={albumImage}
-                            header={track.name}
-                            meta={track.artists[0].name}
-                            extra={audio}
+                            // @ts-ignore
+                            key={result.recordid}
+                            image={image}
+                            header={result.fields.messier}
+                            meta={result.fields.objet}
+                            // extra={audio}
                         />
                     )
                 }
@@ -29,7 +30,7 @@ const TrackResults = ({results}: { results: any }) => {
 
 const mapStateToProps = (state: State) => {
     return {
-        results: state.trackResults
+        results: state.results
     };
 };
 

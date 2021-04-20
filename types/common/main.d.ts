@@ -3,6 +3,7 @@
 interface State {
     trackResults: TrackResults,
     artistResults: ArtistResults,
+    results: Results,
     searchValue: string,
     isLoading: boolean,
     token: string,
@@ -12,6 +13,7 @@ interface State {
 
 
 interface GenericObject  { [key: string]: GenericObject }
+
 type GenericCallback = (...args: any[])=>any
 
 
@@ -29,6 +31,8 @@ interface Results {
 
 
 }
+
+interface Result { [key: string]: GenericObject }
 
 interface TrackResults {
     tracks: Tracks

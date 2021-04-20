@@ -16,20 +16,20 @@ export default (store: any) => (next: GenericCallback) => async (action: Action)
         const token: string = "Bearer " + state.token;
         try {
             // Connecting to API using token and search term defined above
-            // const response: any = await axios
-            //     .get(`https://api.spotify.com/v1/search?q=${searchTerm}&type=${searchType}&limit=10&offset=0`, {
-            //         headers: {
-            //             'Accept': 'application/json',
-            //             'Content-Type': "application/json",
-            //             "Authorization": token
-            //         }
-            //     })
+            const response: any = await axios
+                .get(`https://www.datastro.eu/api/records/1.0/search/?dataset=catalogue-de-messier&q=${searchTerm}&sort=messier`
+                    , {
+                    headers: {
+                        'Accept': 'application/json',
+                        'Content-Type': "application/json"
+                    }
+                })
             // Hiding loading spinner
             store.dispatch({type: 'IS_NOT_LOADING'});
             // Return datas obtained from API
 
 
-            const data: Results = json;
+            const data: Results = response.data;
 
             console.log(data);
             return data;

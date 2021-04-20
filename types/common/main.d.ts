@@ -7,7 +7,8 @@ interface State {
     searchValue: string,
     isLoading: boolean,
     token: string,
-
+    focusObject: number,
+    detailMode: boolean
 }
 
 
@@ -25,6 +26,7 @@ interface Action {
 
 interface Payload {
     text?: string
+
 }
 
 interface Results {
@@ -32,7 +34,15 @@ interface Results {
 
 }
 
-interface Result { [key: string]: GenericObject }
+interface Result {
+    recordid: string,
+    fields: Fields
+}
+
+interface Fields{
+    objet: string,
+    image: string
+}
 
 interface TrackResults {
     tracks: Tracks

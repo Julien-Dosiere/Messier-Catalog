@@ -6,6 +6,8 @@ const initialState: State = {
     searchValue: '',
     isLoading: false,
     token:'',
+    focusObject: 0,
+    detailMode: false
 };
 
 
@@ -18,6 +20,27 @@ export default function(state = initialState, action: Action) {
         }
     }
 
+    if (action.type === 'DETAIL_MODE_ON') {
+        newState = {
+            ...state,
+            detailMode: true
+        }
+    }
+
+    if (action.type === 'DETAIL_MODE_OFF') {
+        console.log('DETAIL_MODE_OFF')
+        newState = {
+            ...state,
+            detailMode: false
+        }
+    }
+
+    if (action.type === 'SET_FOCUS_OBJECT') {
+        newState = {
+            ...state,
+            focusObject: action.payload.id
+        }
+    }
     if (action.type === 'SET_RESULTS') {
         newState = {
             ...state,

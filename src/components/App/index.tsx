@@ -12,7 +12,7 @@ import {css} from "@emotion/core";
 // == Components
 import Search from '../Search';
 import Results from '../Results';
-
+import Details from '../Details';
 
 
 
@@ -25,10 +25,14 @@ const override = css`
 
 
 // == Component
-const App = ({isLoading}: { isLoading: boolean }) => {
+const App = ({isLoading, detailMode}: { isLoading: boolean, detailMode: boolean }) => {
+    console.log(detailMode)
     return (
+
         <div className="app">
-                <Search/>
+            {detailMode == false && <Redirect to="/"/>}
+
+            <Search/>
                 <Spinner
                     css={override}
                     color={"#00EE55"}
@@ -37,11 +41,12 @@ const App = ({isLoading}: { isLoading: boolean }) => {
                     width={6}
                     margin={4}
                 />
-
-            <Route exact strict path={["/", "/track"]}>
-                <Results/>
-            </Route>
-
+                <Route exact strict path={["/"]}>
+                    <Results/>
+                </Route>
+                <Route path={["/details"]}>
+                    <Details />
+                </Route>
         </div>
     );
 };
@@ -49,7 +54,8 @@ const App = ({isLoading}: { isLoading: boolean }) => {
 
 const mapStateToProps = (state: State) => {
     return {
-        isLoading: state.isLoading
+        isLoading: state.isLoading,
+        detailMode: state.detailMode
     };
 };
 

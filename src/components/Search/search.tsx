@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {useLocation} from 'react-router-dom'
+import {useLocation, Redirect} from 'react-router-dom'
 import {Input, Form, Image, Button, Segment} from 'semantic-ui-react';
 
 import logoSpotify from '../../assets/logo_spotify.png';

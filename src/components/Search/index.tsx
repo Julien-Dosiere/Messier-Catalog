@@ -11,9 +11,10 @@ const SearchBar = () => (
     <>
         <Image centered size="medium" src={logo}/>
         <Segment className="search">
-            <Route exact strict path={["/", "/track"]}>
+
                 <Search/>
-            </Route>
+
+
         </Segment>
     </>
 );

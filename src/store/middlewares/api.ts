@@ -16,6 +16,8 @@ export default (store: any) => (next: GenericCallback) => async (action: Action)
         const token: string = "Bearer " + state.token;
         try {
             // Connecting to API using token and search term defined above
+            store.dispatch({type: 'DETAIL_MODE_OFF'});
+
             const response: any = await axios
                 .get(`https://www.datastro.eu/api/records/1.0/search/?dataset=catalogue-de-messier&q=${searchTerm}&sort=messier`
                     , {
